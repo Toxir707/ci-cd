@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 const app = express()
 
 
-if(process.env.NODE_ENV. trim() === "development"){
+if(process.env.NODE_ENV.trim() === "development"){
     app.use(morgan("tiny"))
 }
 
