@@ -1,0 +1,40 @@
+{
+  "name": "jobboard",
+  "version": "0.15.0",
+  "description": "## Loyhani maqsadi: 🎯 - Asosiy pageda loyhada o'zini qanday ishlashi haqida malumot bo'lishi kk - Asosiy page'da yana korxona ishchilar izlashi uchun barcha o'ziga bo'g'liq resumelar bor joyga olib boradigan bo'lishi kk - Asosiy pageda bundan tashqari ishchilar o'zlarini sohalaridagi kompaniyaga ob boradigan bo'lim. - Foydlanuvchilar o'zlarining ishlariga kiradigan kompaniyaga cv(ishga kirish uchun ariza) qoldira olishi kk - Foydalanuvchi ro'yxatdan o'tmagan bo'lsaham bemalol korxonalar yoki cv larni ko'ra olishi kk - Foydalanuvchi email va name bilan ro'yxatdan o'tadi - O'zini profiliga emaili orqali o'tadi - Korxona bir nechta ishchilarni cv sini qabul qilib interview taklif qila olishi kk - Ishchilar esa bir nechta ishlarga ham cv jo'natishi  - Ishchilar barcha qilgan cvlarini profildan ko'ra olishi va qaysi biri qabul qilinganini bila olishi lozim",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "start:dev": "set NODE_ENV=development & nodemon src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Job-board-tmd/jobboard.git"
+  },
+  "keywords": [],
+  "author": "Toxir Muhiddin Diyor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Job-board-tmd/jobboard/issues"
+  },
+  "homepage": "https://github.com/Job-board-tmd/jobboard#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.13.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.2",
+    "nodemailer": "^6.10.0",
+    "winston": "^3.17.0"
+  }
+}

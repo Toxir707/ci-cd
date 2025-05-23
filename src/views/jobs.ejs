@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <!-- Heading -->
+        <h1 class="text-center text-danger mb-4">Jobs</h1>
+
+        <!-- Search Form -->
+        <form action="/jobs" method="get">
+            <div class="input-group mb-4 rounded-3">
+                <span class="input-group-text"><img class="w-25 h-auto" src="data:image/png;base64,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"></span>
+                <input type="text" name="search" class="form-control" placeholder="Search for Jobs">
+            </div>
+        </form>
+
+        <!-- Job Listings -->
+        <div class="list-group">
+            <% data.forEach(el=>{ %>
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <ul class="list-unstyled d-flex justify-content-between"> 
+                    <li style="color: red; font-size: 25px;" class="p-2"><%= el.name %></li>
+                    <li class="p-2 mt-auto" style="font-size: small;"><%= el.createdAt.toLocaleString() %></li>
+                </ul>
+
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6wUpfrr72Vsl05xl0C1VSS8g9uY8HHVBe57+klqwnpVfvz0dFZ5Q64ftIc3c0m" crossorigin="anonymous"></script>
+</body>
+</html>

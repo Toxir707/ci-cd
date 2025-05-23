@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+  
+  .sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #f8f6fa;
+    color: #2c2c54;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #ddd;
+  }
+  
+  .logo {
+    position: relative;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c2c54;
+    margin-bottom: 40px;
+  }
+  
+  .logo h2 {
+    font-family: cursive;
+  }
+  
+  .corner {
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background-color: red;
+    top: -10px;
+    left: -10px;
+  }
+  
+  .corner::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: red;
+    left: 0;
+    top: 0;
+  }
+  
+  .corner-bottom {
+    top: auto;
+    bottom: -10px;
+    right: -10px;
+    left: auto;
+  }
+  
+  .corner-bottom::after {
+    left: auto;
+    right: 0;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .nav-list li {
+    padding: 15px 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .nav-list li:hover,
+  .nav-list .active {
+    background-color: #f0ebf9;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .nav-list i {
+    width: 20px;
+  }
+  .main-content {
+    margin-left: 250px; 
+    padding: 40px;
+    background-color: #f4f2f9;
+    height: 100vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 300px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job_list {
+    width: 60%;
+    margin: 0 auto;
+    
+}
+
+.job_item {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job_li {
+    list-style-type: none;
+    font-size: 1rem;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.job_list h1 {
+    text-align: center;
+    color: red;
+}
+
+@media (max-width: 768px) {
+    .search-input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .job_list {
+        width: 95%;
+    }
+}
+
+
+
+
+  
+    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <span class="corner"></span>
+      <h2>Jobs</h2>
+      <span class="corner corner-bottom"></span>
+    </div>
+    <ul class="nav-list">
+      <li><a href="/users/login" style="text-decoration: none; color: #2c2c54;"><i class="fas fa-home"></i> Home</a></li>
+      <li><i class="fas fa-user"><a href="/jobs" style="text-decoration: none; color: #2c2c54;"></i> Jobs</a></li>
+      <li class="active"><a href="/companies" style="text-decoration: none; color: #2c2c54;"><i class="fas fa-cogs"></i> Companies</a></li>
+      <li><i class="fas fa-briefcase"></i> Cves</li>
+    </ul>
+  </div>
+  <h1 style="color: red;">Companies</h1>
+    <form action="/companies" method="get">
+        <div class="search">
+            <img src="data:image/png;base64,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" alt="image">
+            <input type="search" class="search-input" name="search" placeholder="Search"  id="searchbar">
+        </div>
+    </form>
+
+
+    <div class="job_list">
+        <% if(data){ %>
+            <% data.forEach((el)=>{ %>
+                <%- include('partials/companies',{name:el.name,location:el.location,time:el.createdAt.toLocaleString(),id:el._id,imageUrl:el.imageUrl}) %>
+            <% }) %>  
+        <% }else{ %>
+            <h1>No user found.</h1>
+        <% } %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6wUpfrr72Vsl05xl0C1VSS8g9uY8HHVBe57+klqwnpVfvz0dFZ5Q64ftIc3c0m" crossorigin="anonymous"></script>
+  
+</body>
+</html>

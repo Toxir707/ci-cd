@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Example</title>
+    <style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+  
+  .sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #f8f6fa;
+    color: #2c2c54;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #ddd;
+  }
+  
+  .logo {
+    position: relative;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c2c54;
+    margin-bottom: 40px;
+  }
+  
+  .logo h2 {
+    font-family: cursive;
+  }
+  
+  .corner {
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background-color: red;
+    top: -10px;
+    left: -10px;
+  }
+  
+  .corner::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: red;
+    left: 0;
+    top: 0;
+  }
+  
+  .corner-bottom {
+    top: auto;
+    bottom: -10px;
+    right: -10px;
+    left: auto;
+  }
+  
+  .corner-bottom::after {
+    left: auto;
+    right: 0;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .nav-list li {
+    padding: 15px 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .nav-list li:hover,
+  .nav-list .active {
+    background-color: #f0ebf9;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .nav-list i {
+    width: 20px;
+  }
+  .main-content {
+    margin-left: 250px; /* sidebar'ni joyidan hisoblab */
+    padding: 40px;
+    background-color: #f4f2f9;
+    height: 100vh;
+}
+
+.user-info h1 {
+    font-size: 36px;
+    color: #2c2c54;
+    margin-bottom: 10px;
+}
+
+.user-info .email {
+    font-size: 18px;
+    color: #555;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    display: inline-block;
+}
+.welcome {
+  font-size: 100px;
+  color: red;
+  font-weight: bold;
+  background-color: #fff0f0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.1);
+  max-width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.welcome:hover {
+  background-color: #ffe3e3;
+  transform: scale(1.03);
+}
+
+
+  
+    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <span class="corner"></span>
+      <h2>Jobs</h2>
+      <span class="corner corner-bottom"></span>
+    </div>
+    <ul class="nav-list">
+      <li class="active"><a href="/users/login" style="text-decoration: none; color: #2c2c54;"><i class="fas fa-home"></i> Home</a></li>
+      <li><i class="fas fa-user"><a href="/jobs" style="text-decoration: none; color: #2c2c54;"></i> Jobs</a></li>
+      <li><a href="/companies" style="text-decoration: none; color: #2c2c54;"><i class="fas fa-cogs"></i> Companies</a></li>
+      <li><i class="fas fa-briefcase"></i> Cves</li>
+      <form method="post" action="/users/<%=data.id %>?_method=DELETE">
+        <button type="submit" style="background: none; border: none;">
+          <li style="color: #2c2c54;"><i class="fas fa-sign-out-alt"></i>Log out</li>
+        </button>
+      </form>
+    </ul>
+  </div>
+  <header class="d-flex justify-content-between align-items-center p-3 bg-light border-bottom">
+    <i class="bi bi-list fs-1 text-primary" id="toggle-sidebar"></i>
+    <div class="image">
+      <% if(data.imageUrl) { %>
+        <img src="<%= data.imageUrl %>" alt="User Image" class="img-fluid rounded-circle" width="50">
+      <% } else { %>
+        <pre class="mb-0"><%= data.name %></pre>
+      <% } %>
+    </div>
+  </header>
+  
+  <div class="main-content">
+    <div class="user-info">
+      <h1><%= data.name %></h1>
+      <p class="email"><%= data.email %></p>
+    </div>
+    <p class="welcome">Welcome back <%= data.name %>!</p>
+  </div>
+</body>
+</html>

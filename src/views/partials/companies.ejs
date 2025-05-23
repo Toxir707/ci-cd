@@ -1,0 +1,13 @@
+<div class="job_item" style="display: flex; width: 100%; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start;">
+    <a href="/jobs/?companyId=<%= id %>" style="text-decoration: none; display: flex; align-items: flex-start;">
+        <img class="w-25 h-auto card-img-top" 
+        src="/uploads/<%= imageUrl ? imageUrl : '' %>" 
+        alt="<%= name %> image" 
+        style="max-width: 100%; height: auto;">
+        <ul> 
+            <li style="color: red; font-size: 25px;" class="job_li"><%= name %></li>
+            <li class="job_li" style="font-size: medium;"><%= location %></li>
+            <li class="job_li" style="font-size: small;"><%= time %></li>
+        </ul>
+    </a>
+</div>

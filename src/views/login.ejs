@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f6f3fa;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #fff;
+      padding: 30px;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar h1 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .sidebar .logo-mark {
+      color: red;
+      font-size: 32px;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .login-box h2 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 30px;
+    }
+
+    .login-box .form-group {
+      margin-bottom: 20px;
+    }
+
+    .login-box label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-box button {
+      width: 100%;
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-box button:hover {
+      background: darkred;
+    }
+
+    .corner {
+      width: 40px;
+      height: 40px;
+      border: 5px solid red;
+      position: absolute;
+    }
+
+    .corner.top-left {
+      top: 40px;
+      left: 40px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .corner.bottom-right {
+      bottom: 40px;
+      right: 40px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .login-box p a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .login-box p a:hover {
+      color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h1><span class="logo-mark">L</span>ogin</h1>
+    <p style="margin-top: 20px; color: #555;">Welcome back! Please log in.</p>
+  </div>
+
+  <div class="main-content">
+    <div class="corner top-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <div class="login-box">
+      <h2>Sign In</h2>
+      <h4 style="color: red"><%= error %></h4>
+      <form action="/users/login" method="POST">
+        <div class="form-group">
+          <label for="username">Email</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" required>
+        </div>
+
+        <button type="submit">Login</button>
+        <p style="text-align:center; margin-top: 10px;">
+          Don't have an account? <a href="/users/register">Register</a> |
+          <a href="/users/forgot-password">Forgot password</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
